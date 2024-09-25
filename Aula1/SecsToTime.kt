@@ -7,3 +7,15 @@
       - Calcula o número de horas, minutos e segundos
       - Imprime no formato: "HH hora(s), MM minuto(s) e SS segundo(s)"
  */
+ const val SECS_IN_HOUR = 3600
+ const val SECS_IN_MINUTE = 60
+ 
+ fun main() {
+    print("Indique o tempo em segundos: ")
+	val tm = readln().toInt()
+	val h = tm / SECS_IN_HOUR
+	val rem = tm % SECS_IN_HOUR
+	val m = rem / SECS_IN_MINUTE
+	val s = rem % SECS_IN_MINUTE
+	println("$h hora(s), $m minuto(s) e $s segundo(s)")
+ }
