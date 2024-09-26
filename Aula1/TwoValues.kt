@@ -22,20 +22,17 @@ fun main() {
     val a = readln().toInt()
     print("B? ")
     val b = readln().toInt()
-    //println("$a < $b == ${a < b}")
-	when {
-	   a < b -> println("$a < $b")
-	   a > b -> println("$a > $b")
-	   a == b -> {
-	     println("$a==$b")
-		 println("Iguais")
-	   }
+
+	//println("$a < $b == ${a < b}")
+	val oper = when {
+	   a < b -> "<"
+	   a > b -> ">"
+	   a == b -> "=="
 	}
-	if (a < b) {
-	   println("$a < $b")
-	   println("É menor")
-	}
-	else println("$a >= $b")
+	println("$a $oper $b")
+	val op = if (a < b) "<" else ">="
+	println("$a $op $b")
+
     println("$a + $b == ${a + b}")
     println("$a - $b == ${a - b}")
     println("$a x $b == ${a * b}")
