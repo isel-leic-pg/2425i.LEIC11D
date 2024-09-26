@@ -10,7 +10,8 @@
      Exemplo de utilização:
       A? 27
       B? 42
-      A < B == true
+      *** A < B == true
+	  A < B  / A >= B
       A + B == 69
       A – B == -15
       A x B == 1134
@@ -21,9 +22,23 @@ fun main() {
     val a = readln().toInt()
     print("B? ")
     val b = readln().toInt()
-
-
-
-
-
+    //println("$a < $b == ${a < b}")
+	when {
+	   a < b -> println("$a < $b")
+	   a > b -> println("$a > $b")
+	   a == b -> {
+	     println("$a==$b")
+		 println("Iguais")
+	   }
+	}
+	if (a < b) {
+	   println("$a < $b")
+	   println("É menor")
+	}
+	else println("$a >= $b")
+    println("$a + $b == ${a + b}")
+    println("$a - $b == ${a - b}")
+    println("$a x $b == ${a * b}")
+	val div = a.toDouble() / b
+    println("$a / $b == $div")
 }
