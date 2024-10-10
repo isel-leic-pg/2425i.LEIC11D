@@ -1,4 +1,4 @@
-const val SYMBOLS = "#%X"  // SYMBOLS.length <= 10
+const val SYMBOLS = "#%X"  // SYMBOLS.length <= 5
 const val SIZE_PAIRS = SYMBOLS.length * 2
 
 fun repeatedChars(n: Int, c: Char): String {
