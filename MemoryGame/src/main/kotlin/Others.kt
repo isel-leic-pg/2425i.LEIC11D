@@ -28,29 +28,39 @@ fun countSymbol(pairs: String, sym: Char): Int {
     return count
 }
 
-fun validIndex(idx: Char): Boolean {
-    if (idx !in '0'..'9') return false
-    return (idx - '0') in 0 ..< SIZE_PAIRS
+fun readPlay(pairs: String): Play = readPlay(pairs) {
+    if (it !in '0'..'9') false
+    else (it - '0') in 0 ..< SIZE_PAIRS
 }
 
-fun readPlay(pairs: String): String {
-    var line: String
-    do {
+fun readPlay(pairs: String, validator: (Char)->Boolean): Play {
+    while (true) {
         print("$pairs -> ")
-        line = readln().trim()
-    }while (
-        line.length!=2 ||
-        !validIndex(line[0]) ||
-        !validIndex(line[1])
-    )
-    return line
+        val line = readln().trim()
+        if (line.length==2 && validator(line[0]) && validator(line[1]))
+            return Play(line[0].digitToInt(), line[1]-'0')
+    }
 }
 
+
+/**
+ * Returns the showed string with the pair showed.
+ * @param secret: the secret pairs
+ * @param showed: the showed pairs
+ * @param first: the first index to show
+ * @param second: the second index to show
+ * @return the showed pairs with the pair showed
+ */
 fun showPair(
     secret: String,
     showed: String,
     first: Int,
     second: Int
 ): String {
-    return showed
+    var res = ""
+    for(i in secret.indices)
+        res +=
+            if (i==first || i==second) secret[i]
+            else showed[i]
+    return res
 }
