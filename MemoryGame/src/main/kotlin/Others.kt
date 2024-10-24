@@ -29,8 +29,7 @@ fun countSymbol(pairs: String, sym: Char): Int {
 }
 
 fun readPlay(pairs: String): Play = readPlay(pairs) {
-    if (it !in '0'..'9') false
-    else (it - '0') in 0 ..< SIZE_PAIRS
+    it in '0'..'9' && it.digitToInt() in 0 ..< SIZE_PAIRS
 }
 
 fun readPlay(pairs: String, validator: (Char)->Boolean): Play {
