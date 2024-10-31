@@ -1,10 +1,10 @@
 import pt.isel.canvas.*
 
-const val WIDTH = 850           // Total width of the flag
-const val HEIGHT = 500          // Total height of the flag
-const val GREEN_WIDTH = 300     // Width of the green part
-const val RADIUS = 100          // Radius of the sphere
-const val OFFSET = 50           // Offset of the coat of arms
+private const val WIDTH = 850           // Total width of the flag
+private const val HEIGHT = 500          // Total height of the flag
+private const val GREEN_WIDTH = 300     // Width of the green part
+private const val RADIUS = 100          // Radius of the sphere
+private const val OFFSET = 50           // Offset of the coat of arms
 
 fun Canvas.drawSphere(x: Int, y: Int, radius: Int) {
     val size = radius*2
