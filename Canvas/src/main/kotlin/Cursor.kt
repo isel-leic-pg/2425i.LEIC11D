@@ -2,8 +2,8 @@ import pt.isel.canvas.*
 
 const val LINES = 10
 const val COLUMNS = 15
-private const val CELL_SIZE = 64
-private const val SPRITE_SIZE = 64
+const val CELL_SIZE = 64
+const val SPRITE_SIZE = 64
 
 fun Canvas.drawSprite(sprite: Cell, cell: Cell) {
     drawImage(
